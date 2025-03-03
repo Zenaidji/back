@@ -3,9 +3,7 @@ const Client = require("../models/client.model").model;
 const createClient = async (req, res) => {
   try {
     const newClient = await Client.create(req.body);
-    res
-      .status(201)
-      .json({ message: "Client ajouté avec succès", client: newClient });
+    res.status(201).json(newClient);
   } catch (error) {
     res.status(500).json({
       message: "Erreur serveur",
@@ -20,7 +18,7 @@ const getAllClients = async (req, res) => {
     const clients = await Client.find();
     // Vérifier si des clients ont été trouvés
     if (clients.length > 0) {
-      return res.status(200).json({ clients: clients });
+      return res.status(200).json(clients);
     } else {
       return res.status(404).json({
         message: "Aucun client trouvé",

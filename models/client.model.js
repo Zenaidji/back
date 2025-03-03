@@ -40,11 +40,9 @@ const clientSchema = new mongoose.Schema({
   },
   pub: {
     type: Boolean,
-    required: true,
   },
   rights: {
     type: Boolean,
-    required: true,
   },
   response_id: {
     type: mongoose.Schema.Types.ObjectId,
