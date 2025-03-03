@@ -6,6 +6,7 @@ const cors = require("cors");
 var dbConnection = require("./controllers/db.controller").dbConnection;
 var clientRouter = require("./routes/client");
 var questionRouter = require("./routes/question");
+var responseRouter = require("./routes/response");
 
 var app = express();
 app.use(cors());
@@ -17,5 +18,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/client", clientRouter);
 app.use("/question", questionRouter);
+app.use("/response", responseRouter);
 
 module.exports = app;

@@ -48,7 +48,6 @@ const clientSchema = new mongoose.Schema({
   },
   response_id: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Response",
     required: false,
   },
 });
